@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 export const SendMessage = async (data) => {
   axios
-    .post(process.env.DISCORD_TEST, {
+    .post(process.env.WEBHOOK_URL, {
       content: data,
     })
     .then((response) => {

@@ -5,8 +5,10 @@ import dotenv from "dotenv";
 import cron from "node-cron";
 dotenv.config();
 
+console.log("Server Running");
+
+
 cron.schedule("* * * * * ", async () => {
-  console.log("start!");
 
   try {
     await deleteSheetsData();

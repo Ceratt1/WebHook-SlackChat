@@ -1,7 +1,9 @@
 import { fetchDataAds } from "./fetchDataAds.js";
 import { deleteSheetsData, updateGoogleSheets } from "./updateGoogleSheets.js";
 import { SendMessage } from "./sendMessage.js";
+import dotenv from "dotenv";
 import cron from "node-cron";
+dotenv.config();
 
 // cron.schedule("0 * * * * ", async () => {
 //   console.log("start!");
@@ -29,14 +31,16 @@ import cron from "node-cron";
  
   await deleteSheetsData();
   const data = await fetchDataAds();
-
+  
 
   const formattedData = Object.entries(data[0])
     .map(([key, value]) => `${key}: ${value}`)
     .join("\n");
 
 
+
   SendMessage(formattedData);
+  SendMessage(process.env.DOCSHEET_URL);
 
 
   console.log("envio de dados finalizado!");

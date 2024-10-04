@@ -5,7 +5,7 @@ dotenv.config();
 export const SendMessage = async (data) => {
   axios
     .post(process.env.WEBHOOK_URL, {
-      content: data,
+      text: data,
     })
     .then((response) => {
       console.log("Message sent successfully");

@@ -12,7 +12,7 @@ const fields = [
     'cost_per_action_type_link_click',
     'actions_add_to_cart',
     'cost_per_action_type_add_to_cart',
-    'action_values_initiate_checkout',
+    'actions_initiate_checkout',
     'cost_per_action_type_initiate_checkout',
     'action_values_omni_purchase',
     'outbound_clicks_ctr_outbound_click',

@@ -34,10 +34,14 @@ export async function updateGoogleSheets(data) {
         const formattedData = batch.map(item => {
             const actionValueOmniPurchase = item.action_values_omni_purchase || 0;
             const actionValueFbPixelPurchase = item.actions_offsite_conversion_fb_pixel_purchase || 1; 
-            const outboundClicks = item.outbound_clicks_outbound_click || 1;
+            const outboundClicks = item.outbound_clicks_outbound_click || 1; 
             
-            const divisionResult = actionValueOmniPurchase / actionValueFbPixelPurchase;
-            const conversionRate = ((actionValueOmniPurchase / outboundClicks) * 100).toFixed(2) + '%';
+            const divisionResult = actionValueFbPixelPurchase !== 0 
+                ? actionValueOmniPurchase / actionValueFbPixelPurchase 
+                : 0;
+
+            const conversionRate = (actionValueFbPixelPurchase / outboundClicks )
+
             return {
                 campaign: item.campaign || 'N/A',
                 date: item.date || 'N/A',
@@ -47,12 +51,13 @@ export async function updateGoogleSheets(data) {
                 cost_per_action_type_link_click: item.cost_per_action_type_link_click || 0,
                 actions_add_to_cart: item.actions_add_to_cart || 0,
                 cost_per_action_type_add_to_cart: item.cost_per_action_type_add_to_cart || 0,
-                action_values_initiate_checkout: item.action_values_initiate_checkout || 0,
+                actions_initiate_checkout: item.actions_initiate_checkout || 0,
                 cost_per_action_type_initiate_checkout: item.cost_per_action_type_initiate_checkout || 0,
                 action_values_omni_purchase: actionValueOmniPurchase,
                 outbound_clicks_ctr_outbound_click: item.outbound_clicks_ctr_outbound_click || 0,
                 aov: divisionResult, 
-                outboundClicks: item.outbound_clicks_outbound_click,
+                website_purchases: item.actions_offsite_conversion_fb_pixel_purchase,
+                outboundClicks: outboundClicks,
                 conversion_rate: conversionRate 
             };
         });

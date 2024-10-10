@@ -6,22 +6,19 @@ dotenv.config();
 const fields = [
     'campaign',
     'date',
-    'clicks',
-    'account_id',
-    'spend', //Amount spent
-    // 'results',
-    'catalog_segment_value_omni_purchase_roas', //ROA
-    // 'cpa',
-    'actions_link_click', //Link clicks
-    'cpc', // CPC
-    'action_values_add_to_cart', // Add to carts (number) 
-    'cost_per_action_type_add_to_cart', //Add to carts (cost)
-    'action_values_initiate_checkout', // Initiate checkouts (number)
-    'cost_per_action_type_initiate_checkout', // Initiate checkouts (cost)
-    'action_values_omni_purchase', // Purchase conversion value
-    'ctr', // CTR
-    // 'aov',
-    // 'cr',
+    'spend', 
+    'cost_per_action_type_omni_purchase',
+    'link_clicks',
+    'cost_per_action_type_link_click',
+    'actions_add_to_cart',
+    'cost_per_action_type_add_to_cart',
+    'actions_initiate_checkout',
+    'cost_per_action_type_initiate_checkout',
+    'action_values_omni_purchase',
+    'outbound_clicks_ctr_outbound_click',
+    'action_values_omni_purchase',
+    'actions_offsite_conversion_fb_pixel_purchase',
+    'outbound_clicks_outbound_click'
 ];
 
 export async function fetchDataAds() {

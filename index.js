@@ -2,7 +2,7 @@ import { fetchDataAds } from "./fetchDataAds.js";
 import { deleteSheetsData, updateGoogleSheets } from "./updateGoogleSheets.js";
 import { SendMessage } from "./sendMessage.js";
 import { TotalData } from "./totalData.js";
-// import cron from "node-cron";
+import cron from "node-cron";
 
 
 cron.schedule("*/30 * * * * ", async () => {

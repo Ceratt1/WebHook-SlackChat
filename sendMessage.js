@@ -1,13 +1,36 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import { DateFormatted } from "./dateFunction.js";
 
 dotenv.config();
 export const SendMessage = async (data) => {
+
+  const formattedDate = await DateFormatted();
+
+
+  const message = `
+  
+Hi <@channel> 👋
+Here's our daily Meta Ads performance snapshots from yesterday.
+⚡${formattedDate}⚡
+-Spend    : ${data.spend}$
+-Results  : ${data.actions_offsite_conversion_fb_pixel_purchase}
+  `
+
+
+
+
+
+
+
+
+
+
   axios
     .post(
       process.env.WEBHOOK_URL,
       {
-        text: data
+        text: message
       }
     )
     .then((response) => {

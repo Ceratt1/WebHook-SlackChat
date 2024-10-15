@@ -52,13 +52,8 @@ console.log("start!");
 
 try {
   await deleteSheetsData();
-  const data = await fetchDataAds();
-
-  const formattedData = Object.entries(data[0])
-    .map(([key, value]) => `${key}: ${value}`)
-    .join("\n");
-
-  SendMessage(formattedData);
+  const data = await fetchDataAds();  
+  SendMessage(data[0]);
 
   console.log("Envio de dados finalizado!");
 

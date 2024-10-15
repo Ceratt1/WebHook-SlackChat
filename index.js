@@ -54,9 +54,10 @@ try {
   await deleteSheetsData();
   const data = await fetchDataAds();  
   const message = TotalData(data);
-
+  
   
   SendMessage(message);
+
 
   console.log("Envio de dados finalizado!");
 

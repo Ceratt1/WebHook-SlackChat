@@ -5,63 +5,24 @@ import { TotalData } from "./totalData.js";
 // import cron from "node-cron";
 
 
-// cron.schedule("* * * * * ", async () => {
-//   console.log("start!");
-
-//   try {
-//     await deleteSheetsData();
-//     const data = await fetchDataAds();
-
-//     const formattedData = Object.entries(data[0])
-//       .map(([key, value]) => `${key}: ${value}`)
-//       .join("\n");
-
-//     SendMessage(formattedData);
-
-//     console.log("Envio de dados finalizado!");
-
-//     await updateGoogleSheets(data);
-//   } catch (error) {
-//     console.error("Erro ao executar cron job:", error);
-//   }
-// });
-
-
-// (async () => {
- 
-//   await deleteSheetsData();
-//   const data = await fetchDataAds();
-
-
-//   const formattedData = Object.entries(data[0])
-//     .map(([key, value]) => `${key}: ${value}`)
-//     .join("\n");
-
-
-//   SendMessage(formattedData);
-
-
-//   console.log("envio de dados finalizado!");
-
-
-//   await updateGoogleSheets(data);
-// })();
-
-
-
-console.log("start!");
-try {
-  await deleteSheetsData();
-  const data = await fetchDataAds();  
-  const message = TotalData(data);
+cron.schedule("*/30 * * * * ", async () => {
+  console.log("start!");
+  try {
+    await deleteSheetsData();
+    const data = await fetchDataAds();  
+    const message = TotalData(data);
+    
+    
+    SendMessage(message);
   
   
-  SendMessage(message);
+    console.log("Envio de dados finalizado!");
+  
+    await updateGoogleSheets(data);
+  } catch (error) {
+    console.error("Erro ao executar cron job:", error);
+  }
+})();
 
 
-  console.log("Envio de dados finalizado!");
 
-  await updateGoogleSheets(data);
-} catch (error) {
-  console.error("Erro ao executar cron job:", error);
-}

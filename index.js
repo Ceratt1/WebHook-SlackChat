@@ -22,7 +22,7 @@ cron.schedule("*/30 * * * * ", async () => {
   } catch (error) {
     console.error("Erro ao executar cron job:", error);
   }
-})();
+});
 
 
 

@@ -13,6 +13,7 @@ export const SendMessage = async (data) => {
 Hi <@channel> 👋
 Here's our daily Meta Ads performance snapshots from yesterday.
 ⚡${formattedDate}⚡
+-Campaign : ${data.campaign}
 -Spend    : ${data.spend}$
 -Results  : ${data.actions_offsite_conversion_fb_pixel_purchase}
   `

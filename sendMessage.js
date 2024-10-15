@@ -13,27 +13,11 @@ export const SendMessage = async (data) => {
 Hi <@channel> 👋
 Here's our daily Meta Ads performance snapshots from yesterday.
 ⚡${formattedDate}⚡
--Campaign: ${data.campaign}
--Spend: ${data.spend}$
--Results: ${data.actions_offsite_conversion_fb_pixel_purchase}
--ROAS: ${data.action_values_omni_purchase}
--CPA: $${data.cost_per_action_type_omni_purchase}
--Links Clicks: ${data.link_clicks}
--CPC: $${data.cost_per_action_type_link_click}
--Add to carts(number): ${data.actions_add_to_cart}
--Add to carts(cost): $${data.cost_per_action_type_add_to_cart}
--Initiate checkouts (number): ${data.actions_initiate_checkout}
 
+-----------------------------
+-Total Spend: $${data.spend}
+-Total Revenue: ${data.action_values_omni_purchase}
   `
-
-
-
-
-
-
-
-
-
 
   axios
     .post(

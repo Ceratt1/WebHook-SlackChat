@@ -1,7 +1,8 @@
 import { fetchDataAds } from "./fetchDataAds.js";
 import { deleteSheetsData, updateGoogleSheets } from "./updateGoogleSheets.js";
 import { SendMessage } from "./sendMessage.js";
-import cron from "node-cron";
+import { TotalData } from "./totalData.js";
+// import cron from "node-cron";
 
 
 // cron.schedule("* * * * * ", async () => {
@@ -49,13 +50,13 @@ import cron from "node-cron";
 
 
 console.log("start!");
-
 try {
   await deleteSheetsData();
   const data = await fetchDataAds();  
+  const message = TotalData(data);
 
   
-  SendMessage(data[0]);
+  SendMessage(message);
 
   console.log("Envio de dados finalizado!");
 

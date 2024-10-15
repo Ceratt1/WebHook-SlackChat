@@ -35,12 +35,13 @@ export async function updateGoogleSheets(data) {
             const actionValueOmniPurchase = item.action_values_omni_purchase || 0;
             const actionValueFbPixelPurchase = item.actions_offsite_conversion_fb_pixel_purchase || 1; 
             const outboundClicks = item.outbound_clicks_outbound_click || 1; 
+            const websitePurchaseRoas = item.website_purchase_roas_offsite_conversion_fb_pixel_purchase || 0; 
             
             const divisionResult = actionValueFbPixelPurchase !== 0 
                 ? actionValueOmniPurchase / actionValueFbPixelPurchase 
                 : 0;
 
-            const conversionRate = (actionValueFbPixelPurchase / outboundClicks )
+            const conversionRate = (actionValueFbPixelPurchase / outboundClicks)
 
             return {
                 campaign: item.campaign || 'N/A',
@@ -58,7 +59,8 @@ export async function updateGoogleSheets(data) {
                 aov: divisionResult, 
                 website_purchases: item.actions_offsite_conversion_fb_pixel_purchase,
                 outboundClicks: outboundClicks,
-                conversion_rate: conversionRate 
+                conversion_rate: conversionRate,
+                website_purchase_roas_offsite_conversion_fb_pixel_purchase: websitePurchaseRoas // Adiciona ROAS
             };
         });
 

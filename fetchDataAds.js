@@ -7,6 +7,7 @@ const fields = [
     'campaign',
     'date',
     'spend', 
+    'website_purchase_roas_offsite_conversion_fb_pixel_purchase', //roa
     'cost_per_action_type_omni_purchase',
     'link_clicks',
     'cost_per_action_type_link_click',

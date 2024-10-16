@@ -11,7 +11,6 @@ import cron from "node-cron";
     // await deleteSheetsData();
     const data = await fetchDataAds();  
     const message = TotalData(data);
-    console.log(message);
     
     
     SendMessage(message);

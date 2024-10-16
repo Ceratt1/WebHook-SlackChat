@@ -12,6 +12,7 @@ export const SendMessage = async (data) => {
 Hi <!channel> 👋
 ‎ 
 Here’s our Meta Ads performance snapshots:
+‎ 
 ⚡${formattedDate}⚡
 
 -----------------------------
@@ -27,7 +28,7 @@ Total Clicks: ${Number(data.link_clicks).toLocaleString('en-US', { minimumFracti
 Cost Per Click: $${data.cost_per_action_type_link_click.toFixed(2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 Add To Cart: ${Number(data.actions_add_to_cart).toLocaleString('en-US', { minimumFractionDigits: 2 })}
 Cost Per Add To Cart: $${data.cost_per_action_type_add_to_cart.toFixed(2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
-Total Initiate Checkouts: $${Number(data.actions_initiate_checkout).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+Total Initiate Checkouts: ${Number(data.actions_initiate_checkout).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 Cost Per Initiate Checkout: $${Number(data.cost_per_action_type_initiate_checkout).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 Click Through Rate: ${data.outbound_clicks_ctr_outbound_click.toFixed(2)}%
   `

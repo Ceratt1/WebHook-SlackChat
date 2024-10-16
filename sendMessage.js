@@ -9,9 +9,8 @@ export const SendMessage = async (data) => {
 
 
   const message = `
-
-
-  
+\n
+\n  
 Hi <!channel> 👋
 Here’s our Meta Ads performance snapshots
 ⚡${formattedDate}⚡

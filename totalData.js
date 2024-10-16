@@ -62,5 +62,15 @@ export const TotalData = (data) => {
 
     returnValue.cost_per_action_type_initiate_checkout = returnValue.cost_per_action_type_initiate_checkout / data.length
     returnValue.outbound_clicks_ctr_outbound_click = (returnValue.outbound_clicks_ctr_outbound_click / data.length) * 100
+
+
+
+
+
+
+
+
+
+
     return returnValue;
 }

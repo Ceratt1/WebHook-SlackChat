@@ -18,7 +18,7 @@ Here’s our Meta Ads performance snapshots:
 -----------------------------
 Total Spend: $${Number(data.spend).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 Total Revenue: $${Number(data.action_values_omni_purchase).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-ROA: ${data.website_purchase_roas_offsite_conversion_fb_pixel_purchase.toFixed(1)}x
+ROAS: ${data.website_purchase_roas_offsite_conversion_fb_pixel_purchase.toFixed(1)}x
 AOV: $${data.AOV.toFixed(2)}
 CR : ${data.CR.toFixed(2)}%
 -----------------------------

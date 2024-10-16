@@ -60,7 +60,7 @@ export async function updateGoogleSheets(data) {
                 website_purchases: item.actions_offsite_conversion_fb_pixel_purchase,
                 outboundClicks: outboundClicks,
                 conversion_rate: conversionRate,
-                website_purchase_roas_offsite_conversion_fb_pixel_purchase: websitePurchaseRoas // Adiciona ROAS
+                website_purchase_roas_offsite_conversion_fb_pixel_purchase: websitePurchaseRoas 
             };
         });
 

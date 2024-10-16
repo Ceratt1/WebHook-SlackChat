@@ -9,7 +9,8 @@ const fields = [
     'spend', 
     'website_purchase_roas_offsite_conversion_fb_pixel_purchase', //roa
     'cost_per_action_type_omni_purchase',
-    'link_clicks',
+    // 'link_clicks',
+    'actions_link_click', //link click
     'cost_per_action_type_link_click',
     'actions_add_to_cart',
     'cost_per_action_type_add_to_cart',

@@ -48,7 +48,7 @@ export async function updateGoogleSheets(data) {
                 date: item.date || 'N/A',
                 spend: item.spend || 0,
                 cost_per_action_type_omni_purchase: item.cost_per_action_type_omni_purchase || 0,
-                link_clicks: item.link_clicks || 0,
+                actions_link_click: item.link_clicks || 0,
                 cost_per_action_type_link_click: item.cost_per_action_type_link_click || 0,
                 actions_add_to_cart: item.actions_add_to_cart || 0,
                 cost_per_action_type_add_to_cart: item.cost_per_action_type_add_to_cart || 0,

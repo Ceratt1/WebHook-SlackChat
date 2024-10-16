@@ -24,7 +24,7 @@ CR : ${data.CR.toFixed(2)}%
 -----------------------------
 Total Purchases: ${data.actions_offsite_conversion_fb_pixel_purchase}
 Cost Per Purchase: $${Number(data.cost_per_action_type_omni_purchase).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-Total Clicks: ${Number(data.link_clicks).toLocaleString('en-US', { minimumFractionDigits: 0 })}
+Total Clicks: ${Number(data.actions_link_click).toLocaleString('en-US', { minimumFractionDigits: 0 })}
 Cost Per Click: $${data.cost_per_action_type_link_click.toFixed(2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 Add To Cart: ${Number(data.actions_add_to_cart).toLocaleString('en-US', { minimumFractionDigits: 0 })}
 Cost Per Add To Cart: $${data.cost_per_action_type_add_to_cart.toFixed(2).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}

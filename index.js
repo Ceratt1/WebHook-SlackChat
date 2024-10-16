@@ -8,7 +8,7 @@ import cron from "node-cron";
 // cron.schedule("* * * * *", async () => {
   console.log("start!");
   try {
-    // await deleteSheetsData();
+    await deleteSheetsData();
     const data = await fetchDataAds();  
     const message = TotalData(data);
     
@@ -18,7 +18,7 @@ import cron from "node-cron";
   
     console.log("Envio de dados finalizado!");
   
-    // await updateGoogleSheets(data);
+    await updateGoogleSheets(data);
   } catch (error) {
     console.error("Erro ao executar cron job:", error);
   }

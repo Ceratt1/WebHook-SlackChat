@@ -5,7 +5,7 @@ import { TotalData } from "./totalData.js";
 import cron from "node-cron";
 
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("30 10 * * *", async () => {
   console.log("start!");
   try {
     await deleteSheetsData();

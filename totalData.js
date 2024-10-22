@@ -9,7 +9,7 @@ export const TotalData = (data) => {
         CR : 0,
         actions_offsite_conversion_fb_pixel_purchase : 0,
         cost_per_action_type_omni_purchase : 0,
-        link_clicks : 0,
+        actions_link_click : 0,
         cost_per_action_type_link_click : 0,
         actions_add_to_cart : 0,
         cost_per_action_type_add_to_cart : 0,
@@ -30,7 +30,7 @@ export const TotalData = (data) => {
         returnValue.website_purchase_roas_offsite_conversion_fb_pixel_purchase += data[index].website_purchase_roas_offsite_conversion_fb_pixel_purchase == null ? 0 : data[index].website_purchase_roas_offsite_conversion_fb_pixel_purchase;
         returnValue.actions_offsite_conversion_fb_pixel_purchase += data[index].actions_offsite_conversion_fb_pixel_purchase == null ? 0 : data[index].actions_offsite_conversion_fb_pixel_purchase;
         returnValue.cost_per_action_type_omni_purchase += data[index].cost_per_action_type_omni_purchase == null ? 0 : data[index].cost_per_action_type_omni_purchase;
-        returnValue.link_clicks += data[index].link_clicks == null ? 0 : data[index].link_clicks;
+        returnValue.actions_link_click += data[index].actions_link_click == null ? 0 : data[index].actions_link_click;
         returnValue.cost_per_action_type_link_click += data[index].cost_per_action_type_link_click == null ? 0 : data[index].cost_per_action_type_link_click;
         returnValue.actions_add_to_cart += data[index].actions_add_to_cart == null ? 0 : data[index].actions_add_to_cart;
         returnValue.cost_per_action_type_add_to_cart += data[index].cost_per_action_type_add_to_cart == null ? 0 : data[index].cost_per_action_type_add_to_cart;
@@ -62,5 +62,15 @@ export const TotalData = (data) => {
 
     returnValue.cost_per_action_type_initiate_checkout = returnValue.cost_per_action_type_initiate_checkout / data.length
     returnValue.outbound_clicks_ctr_outbound_click = (returnValue.outbound_clicks_ctr_outbound_click / data.length) * 100
+
+
+
+
+
+
+
+
+
+
     return returnValue;
 }

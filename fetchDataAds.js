@@ -9,7 +9,8 @@ const fields = [
     'spend', 
     'website_purchase_roas_offsite_conversion_fb_pixel_purchase', //roa
     'cost_per_action_type_omni_purchase',
-    'link_clicks',
+    // 'link_clicks',
+    'actions_link_click', //link click
     'cost_per_action_type_link_click',
     'actions_add_to_cart',
     'cost_per_action_type_add_to_cart',
@@ -24,7 +25,9 @@ const fields = [
 
 export async function fetchDataAds() {
     const apiKey = process.env.WINDSOR_API_KEY;
-    const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_preset=last_7d&fields=${fields.join(',')}`;
+    // const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_preset=last_7d&fields=${fields.join(',')}`; //7 dias
+    const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_from=2024-10-15&date_to=2024-10-15&fields=${fields.join(',')}`;
+
 
     try {
         const response = await axios.get(url);

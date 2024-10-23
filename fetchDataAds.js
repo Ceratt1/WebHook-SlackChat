@@ -26,7 +26,9 @@ const fields = [
 export async function fetchDataAds() {
     const apiKey = process.env.WINDSOR_API_KEY;
     // const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_preset=last_7d&fields=${fields.join(',')}`; //7 dias
-    const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_from=2024-10-17&date_to=2024-10-17&fields=${fields.join(',')}`;
+    // const url = `https://connectors.windsor.ai/facebook?api_key=${apiKey}&date_from=2024-10-17&date_to=2024-10-17&fields=${fields.join(',')}`;
+    const url = `https://connectors.windsor.ai/all?api_key=${apiKey}&date_preset=last_1dT&fields=${fields.join(',')}`;
+
 
     try {
         const response = await axios.get(url);
